@@ -1,0 +1,134 @@
+{% extends "templates/web.html" %} {% block title %} L3Harris {% endblock %} {% block page_content %}
+<div id="l3harris_status_values" class="hidden">{{l3harris_status_values}}</div>
+<section class="faq_area bg_color">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 pr_20">
+                <div class="faq_tab">
+                    <h4 class="f_p t_color3 f_600 f_size_22 mb_40">{{customer.customer_name}}</h4>
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="dashboard-tab" data-toggle="tab" href="#dashboard" role="tab" aria-controls="dashboard" aria-selected="true">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="subscription-tab" data-toggle="tab" href="#subscription" role="tab" aria-controls="subscription" aria-selected="false">Subscription</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="billing-tab" data-toggle="tab" href="#billing" role="tab" aria-controls="billing" aria-selected="false">Billing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="settings-tab" data-toggle="tab" href="#settings" role="tab" aria-controls="settings" aria-selected="false">Notifications</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="ticket-tab" data-toggle="tab" href="#ticket" role="tab" aria-controls="ticket" aria-selected="false">Tickets</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="new-subscription-tab" data-toggle="tab" href="#new-subscription" role="tab" aria-controls="new-subscription-tab" aria-selected="false">New
+                                Subscription</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-9">
+                <div class="tab-content faq_content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
+                        <h4>Dashboard</h4>
+                        <div class="container">
+                            {% include 'templates/includes/user_profile/user_dashboard.html' %}
+                        </div>
+
+                    </div>
+                    <div class="tab-pane fade" id="subscription" role="tabpanel" aria-labelledby="subscription-tab">
+                        <h4>Subscription</h4>
+                        <div class="container p0">
+                            {% include 'templates/includes/user_profile/subscriptions.html' %}
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="billing" role="tabpanel" aria-labelledby="billing-tab">
+                        <h4>Invoices</h4>
+                        <div class="container p0">
+                            {% include 'templates/includes/user_profile/invoices.html' %}
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="settings" role="tabpanel" aria-labelledby="settings-tab">
+                        <h4>Notifications</h4>
+                        <div class="container p0">
+                            {% include 'templates/includes/user_profile/notifications.html' %}
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="ticket" role="tabpanel" aria-labelledby="ticket-tab">
+                        <h4>Tickets</h4>
+                        <div class="container p0">
+                            {% include 'templates/includes/user_profile/new_ticket.html' %}
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="new-subscription" role="tabpanel" aria-labelledby="new-subscription-tab">
+                        <h4>New Subscription</h4>
+                        <div class="container p0">
+                            {% include 'templates/includes/user_profile/new_subscription.html' %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %} {% block script %}
+<script>
+    const data = {
+        labels: ["12am-3am", "3am-6pm", "6am-9am", "9am-12am",
+            "12pm-3pm", "3pm-6pm", "6pm-9pm", "9am-12am"
+        ],
+        datasets: [{
+            name: "Latency",
+            type: "bar",
+            values: [25, 40, 30, 35, 8, 52, 17, -4]
+        }, {
+            name: "ThroughPut",
+            type: "line",
+            values: [25, 50, -10, 15, 18, 32, 27, 14]
+        }]
+    }
+
+    const data1 = {
+        labels: ['Jan','Feb','March','April','May','June'],
+        datasets: [{
+            values: [25, 40, 30, 35, 8, 52]
+        }],
+    }
+
+    const data2 = {
+        labels: ['Q3-FY2019','Q4-FY2020','Q1-FY2020','Q2-FY2020'],
+        datasets: [{
+            values: [25, 40, 30, 35]
+        }],
+    }
+
+    const chart = new frappechart.Chart("#chart", {
+        title: "Daily Latency & Throughput",
+        data: data,
+        type: 'axis-mixed', // or 'bar', 'line', 'scatter', 'pie', 'percentage'
+        height: 250,
+        colors: ['#7cd6fd', '#743ee2']
+    })
+    const chart1 = new frappechart.Chart("#chart1", {
+        title: "Last 6 months usage",
+        data: data1,
+        type: 'pie', // or 'bar', 'line', 'scatter', 'pie', 'percentage'
+        height: 250,
+        //colors: ['#7cd6fd', '#743ee2','']
+    })
+    const chart2 = new frappechart.Chart("#chart2", {
+        title: "Quartely Usage",
+        data: data2,
+        type: 'bar', // or 'bar', 'line', 'scatter', 'pie', 'percentage'
+        height: 250,
+        colors: ['#743ee2']
+    })
+</script>
+{% endblock %}

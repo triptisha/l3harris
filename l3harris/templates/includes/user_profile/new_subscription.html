@@ -1,0 +1,62 @@
+<section class="blog_area_two  service_item">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Network Type</label>
+                <select class="form-control" id="network_type">
+                {% for i in network_type %}
+                    <option>{{i.network_type}}</option>
+                {% endfor %}
+                </select>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Network Location</label>
+                <select class="form-control" id="network_location">
+                    {% for i in locations %}
+                    <option>{{i.location}}</option>
+                {% endfor %}
+                </select>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <label for="customRange3">Throughput</label>
+            <label id="throughput_lable" style="float: right; font-size: 14px; font-family: monospace;"></label>
+            <div id="throughput_slider"></div>
+        </div>
+        <div class="col-md-6">
+            <label for="customRange3">Latency</label>
+            <label id="latency_lable" style="float: right; font-size: 10px; font-family: monospace;"></label>
+            <div id="latency_slider"></div>
+        </div>
+        <div class="col-md-6">
+            <label for="customRange3">From</label>
+            <input type="text" class="form-control" class="from-date" id="from_date">
+        </div>
+        <div class="col-md-6">
+            <label for="customRange3">To</label>
+            <input type="text" class="form-control" class="to-date" id="to_date">
+        </div>
+        <div class="col-md-6 hidden">
+            <label>Approximate Cost</label>
+            <input readonly type="text" class="form-control" id="approx_cost">
+        </div>
+    </div>
+    
+    <div class="row mb_20">
+        <div class="col-md-6" style="text-align: left;">
+            <button class="btn btn-primary mt_40" id="calc_estimate">Calculate Estimate</button>
+        </div>
+        <div class="col-md-6" style="text-align: right;">
+            <button class="btn btn-primary mt_40" id="new_subscription">Submit</button>
+        </div>
+    </div>
+    
+</section>
+{% block script %}
+
+<script>
+    
+</script>
+{% endblock %}

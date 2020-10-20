@@ -1,0 +1,39 @@
+{
+    "css/bootstrap.min.css": [
+        "public/css/bootstrap.min.css"
+    ],
+    "css/responsive.css": [
+        "public/css/responsive.css"
+    ],
+    "css/style.css": [
+        "public/css/style.css"
+    ],
+    "css/l3harris.min.css": [
+        "public/css/l3harris.css"
+    ],
+
+    "js/main.js": [
+        "public/js/main.js"
+    ],
+    "js/plugins.js": [
+        "public/js/plugins.js"
+    ],
+    "js/jquery.validate.min.js": [
+        "public/js/jquery.validate.min.js"
+    ],
+    "js/jquery.form.js": [
+        "public/js/jquery.form.js"
+    ],
+    "js/jquery-3.2.1.min.js": [
+        "public/js/jquery.3.2.1-min.js"
+    ],
+    "js/propper.js": [
+        "public/js/propper.js"
+    ]
+    // "js/bootstrap.min.js": [
+    //     "public/js/bootstrap.min.js"
+    // ]
+   
+    
+
+}

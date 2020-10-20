@@ -1,0 +1,85 @@
+{
+ "autoname": "Log.######",
+ "creation": "2020-07-20 10:09:13.800656",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "customer",
+  "latency",
+  "network_type",
+  "column_break_3",
+  "item",
+  "throughput",
+  "location"
+ ],
+ "fields": [
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer"
+  },
+  {
+   "fetch_from": "item.network_latency",
+   "fieldname": "latency",
+   "fieldtype": "Link",
+   "label": "Latency",
+   "options": "Network Latency"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "item",
+   "fieldtype": "Link",
+   "label": "Item",
+   "options": "Item"
+  },
+  {
+   "fetch_from": "item.network_throughput",
+   "fieldname": "throughput",
+   "fieldtype": "Link",
+   "label": "Throughput",
+   "options": "Network Throughput"
+  },
+  {
+   "fetch_from": "item.network_type",
+   "fieldname": "network_type",
+   "fieldtype": "Link",
+   "label": "Network Type",
+   "options": "Network Type"
+  },
+  {
+   "fetch_from": "item.network_location",
+   "fieldname": "location",
+   "fieldtype": "Link",
+   "label": "Location",
+   "options": "Network Location"
+  }
+ ],
+ "modified": "2020-07-20 10:13:54.872850",
+ "modified_by": "Administrator",
+ "module": "L3Harris",
+ "name": "L3harris Log",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

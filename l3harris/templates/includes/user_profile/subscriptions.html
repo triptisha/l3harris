@@ -1,0 +1,298 @@
+<section class="blog_area_two  service_item">
+<table class="table table-condensed" id="myTable">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Id</th>
+            <th scope="col">Plan</th>
+            <th scope="col">Start Date</th>
+            <th scope="col">Status</th>
+        </tr>
+    </thead>
+    <tbody class="panel">
+        {% for subscription in subscriptions %}
+        <tr data-toggle="collapse" data-target="#demo{{loop.index}}" data-parent="#myTable" style="cursor: pointer;">
+            <td>{{loop.index}}</td>
+            <td>{{subscription.name}}</td>
+            <td>{{subscription.plans[0].plan}}</td>
+            <td>{{subscription.start}}</td>
+            <td>{{subscription.status}}</td>
+        </tr>
+        <tr id="demo{{loop.index}}" class="collapse">
+            <td colspan="6" class="hiddenRow">
+                <div class="row">
+                    <div class="col-md-4">
+                        <button type="button" class="btn btn-primary">Stop Subscription</button>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="container">
+                            {% if subscription.l3_status == "Request Sent" %}
+                            <div class="row smpl-step" style="border-bottom: 0; min-width: 500px;">
+                                <div class="col-xs-3 smpl-step-step complete">
+                                    <div class="text-center smpl-step-num" style="margin-top: -48px;">Reqeust Sent</div>
+                                    <div class="progress">
+                                        <div class="progress-bar"></div>
+                                    </div>
+                                    <a class="smpl-step-icon"><i class="fa fa-user"
+                                            style="font-size: 35px; padding-left: 14px; padding-top: 8px; color: black;"></i></a>
+                                    <div class="smpl-step-info text-center"></div>
+                                </div>
+
+                                <div class="col-xs-3 smpl-step-step disabled">
+                                    <div class="text-center smpl-step-num">Provisioning</div>
+                                    <div class="progress">
+                                        <div class="progress-bar"></div>
+                                    </div>
+                                    <a class="smpl-step-icon"><i class="fa fa-dollar"
+                                            style="font-size: 35px; padding-left: 16px; padding-top: 8px; color: black;"></i></a>
+                                    <div class="smpl-step-info text-center">
+                                    </div>
+                                </div>
+                                <div class="col-xs-3 smpl-step-step disabled">
+                                    <div class="text-center smpl-step-num">Activating</div>
+                                    <div class="progress">
+                                        <div class="progress-bar"></div>
+                                    </div>
+                                    <a class="smpl-step-icon"><i class="fa fa-repeat"
+                                            style="font-size: 35px; padding-left: 12px; padding-top: 10px; color: black;"></i></a>
+                                    <div class="smpl-step-info text-center"></div>
+                                </div>
+                                <div class="col-xs-3 smpl-step-step disabled">
+                                    <div class="text-center smpl-step-num">Done</div>
+                                    <div class="progress">
+                                        <div class="progress-bar"></div>
+                                    </div>
+                                    <a class="smpl-step-icon"><i class="fa fa-download"
+                                            style="font-size: 35px; padding-left: 10px; padding-top: 10px; color: black; opacity: 0.3;"></i></a>
+                                    <div class="smpl-step-info text-center"></div>
+                                </div>
+                            </div>
+                            {% endif %}
+                            {% if subscription.l3_status == "Provisioning" %}
+                            <div class="row smpl-step" style="border-bottom: 0; min-width: 500px;">
+                                <div class="col-xs-3 smpl-step-step complete">
+                                    <div class="text-center smpl-step-num" style="margin-top: -48px;">Reqeust Sent</div>
+                                    <div class="progress">
+                                        <div class="progress-bar"></div>
+                                    </div>
+                                    <a class="smpl-step-icon"><i class="fa fa-user"
+                                            style="font-size: 35px; padding-left: 14px; padding-top: 8px; color: black;"></i></a>
+                                    <div class="smpl-step-info text-center"></div>
+                                </div>
+
+                                <div class="col-xs-3 smpl-step-step complete">
+                                    <div class="text-center smpl-step-num">Provisioning</div>
+                                    <div class="progress">
+                                        <div class="progress-bar"></div>
+                                    </div>
+                                    <a class="smpl-step-icon"><i class="fa fa-dollar"
+                                            style="font-size: 35px; padding-left: 16px; padding-top: 8px; color: black;"></i></a>
+                                    <div class="smpl-step-info text-center">
+                                    </div>
+                                </div>
+                                <div class="col-xs-3 smpl-step-step disabled">
+                                    <div class="text-center smpl-step-num">Activating</div>
+                                    <div class="progress">
+                                        <div class="progress-bar"></div>
+                                    </div>
+                                    <a class="smpl-step-icon"><i class="fa fa-repeat"
+                                            style="font-size: 35px; padding-left: 12px; padding-top: 10px; color: black;"></i></a>
+                                    <div class="smpl-step-info text-center"></div>
+                                </div>
+                                <div class="col-xs-3 smpl-step-step disabled">
+                                    <div class="text-center smpl-step-num">Done</div>
+                                    <div class="progress">
+                                        <div class="progress-bar"></div>
+                                    </div>
+                                    <a class="smpl-step-icon"><i class="fa fa-download"
+                                            style="font-size: 35px; padding-left: 10px; padding-top: 10px; color: black; opacity: 0.3;"></i></a>
+                                    <div class="smpl-step-info text-center"></div>
+                                </div>
+                            </div>
+                            {% endif %} 
+                            {% if subscription.l3_status == "Activivating" %}
+                            <div class="row smpl-step" style="border-bottom: 0; min-width: 500px;">
+                                <div class="col-xs-3 smpl-step-step complete">
+                                    <div class="text-center smpl-step-num" style="margin-top: -48px;">Reqeust Sent</div>
+                                    <div class="progress">
+                                        <div class="progress-bar"></div>
+                                    </div>
+                                    <a class="smpl-step-icon"><i class="fa fa-user"
+                                            style="font-size: 35px; padding-left: 14px; padding-top: 8px; color: black;"></i></a>
+                                    <div class="smpl-step-info text-center"></div>
+                                </div>
+
+                                <div class="col-xs-3 smpl-step-step complete">
+                                    <div class="text-center smpl-step-num">Provisioning</div>
+                                    <div class="progress">
+                                        <div class="progress-bar"></div>
+                                    </div>
+                                    <a class="smpl-step-icon"><i class="fa fa-dollar"
+                                            style="font-size: 35px; padding-left: 16px; padding-top: 8px; color: black;"></i></a>
+                                    <div class="smpl-step-info text-center">
+                                    </div>
+                                </div>
+                                <div class="col-xs-3 smpl-step-step complete">
+                                    <div class="text-center smpl-step-num">Activating</div>
+                                    <div class="progress">
+                                        <div class="progress-bar"></div>
+                                    </div>
+                                    <a class="smpl-step-icon"><i class="fa fa-repeat"
+                                            style="font-size: 35px; padding-left: 12px; padding-top: 10px; color: black;"></i></a>
+                                    <div class="smpl-step-info text-center"></div>
+                                </div>
+                                <div class="col-xs-3 smpl-step-step disabled">
+                                    <div class="text-center smpl-step-num">Done</div>
+                                    <div class="progress">
+                                        <div class="progress-bar"></div>
+                                    </div>
+                                    <a class="smpl-step-icon"><i class="fa fa-download"
+                                            style="font-size: 35px; padding-left: 10px; padding-top: 10px; color: black; opacity: 0.3;"></i></a>
+                                    <div class="smpl-step-info text-center"></div>
+                                </div>
+                            </div>
+                            {% endif %}   
+                            {% if subscription.l3_status == "Done" %}
+                            <div class="row smpl-step" style="border-bottom: 0; min-width: 500px;">
+                                <div class="col-xs-3 smpl-step-step complete">
+                                    <div class="text-center smpl-step-num" style="margin-top: -48px;">Reqeust Sent</div>
+                                    <div class="progress">
+                                        <div class="progress-bar"></div>
+                                    </div>
+                                    <a class="smpl-step-icon"><i class="fa fa-user"
+                                            style="font-size: 35px; padding-left: 14px; padding-top: 8px; color: black;"></i></a>
+                                    <div class="smpl-step-info text-center"></div>
+                                </div>
+
+                                <div class="col-xs-3 smpl-step-step complete">
+                                    <div class="text-center smpl-step-num">Provisioning</div>
+                                    <div class="progress">
+                                        <div class="progress-bar"></div>
+                                    </div>
+                                    <a class="smpl-step-icon"><i class="fa fa-dollar"
+                                            style="font-size: 35px; padding-left: 16px; padding-top: 8px; color: black;"></i></a>
+                                    <div class="smpl-step-info text-center">
+                                    </div>
+                                </div>
+                                <div class="col-xs-3 smpl-step-step complete">
+                                    <div class="text-center smpl-step-num">Activating</div>
+                                    <div class="progress">
+                                        <div class="progress-bar"></div>
+                                    </div>
+                                    <a class="smpl-step-icon"><i class="fa fa-repeat"
+                                            style="font-size: 35px; padding-left: 12px; padding-top: 10px; color: black;"></i></a>
+                                    <div class="smpl-step-info text-center"></div>
+                                </div>
+                                <div class="col-xs-3 smpl-step-step complete">
+                                    <div class="text-center smpl-step-num">Done</div>
+                                    <div class="progress">
+                                        <div class="progress-bar"></div>
+                                    </div>
+                                    <a class="smpl-step-icon"><i class="fa fa-download"
+                                            style="font-size: 35px; padding-left: 10px; padding-top: 10px; color: black; opacity: 0.3;"></i></a>
+                                    <div class="smpl-step-info text-center"></div>
+                                </div>
+                            </div>
+                            {% endif %}                                                       
+                        </div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</section>
+
+{% block style %}
+<style>
+    .smpl-step {
+        margin-top: 40px;
+    }
+    
+    .smpl-step {
+        border-bottom: solid 1px #e0e0e0;
+        padding: 0 0 10px 0;
+    }
+    
+    .smpl-step>.smpl-step-step {
+        padding: 0;
+        position: relative;
+    }
+    
+    .smpl-step>.smpl-step-step .smpl-step-num {
+        font-size: 17px;
+        margin-top: -20px;
+        margin-left: 47px;
+    }
+    
+    .smpl-step>.smpl-step-step .smpl-step-info {
+        font-size: 14px;
+        padding-top: 27px;
+    }
+    
+    .smpl-step>.smpl-step-step>.smpl-step-icon {
+        position: absolute;
+        width: 55px;
+        height: 55px;
+        display: block;
+        background: #5CB85C;
+        top: 45px;
+        left: 50%;
+        margin-top: -35px;
+        margin-left: 0px;
+        border-radius: 50%;
+    }
+    
+    .smpl-step>.smpl-step-step>.progress {
+        position: relative;
+        border-radius: 0px;
+        height: 8px;
+        box-shadow: none;
+        margin-top: 27px;
+    }
+    
+    .smpl-step>.smpl-step-step>.progress>.progress-bar {
+        width: 0px;
+        box-shadow: none;
+        background: #428BCA;
+    }
+    
+    .smpl-step>.smpl-step-step.complete>.progress>.progress-bar {
+        width: 100%;
+    }
+    
+    .smpl-step>.smpl-step-step.active>.progress>.progress-bar {
+        width: 50%;
+    }
+    
+    .smpl-step>.smpl-step-step:first-child.active>.progress>.progress-bar {
+        width: 0%;
+    }
+    
+    .smpl-step>.smpl-step-step:last-child.active>.progress>.progress-bar {
+        width: 100%;
+    }
+    
+    .smpl-step>.smpl-step-step.disabled>.smpl-step-icon {
+        background-color: #f5f5f5;
+    }
+    
+    .smpl-step>.smpl-step-step.disabled>.smpl-step-icon:after {
+        opacity: 0;
+    }
+    
+    .smpl-step>.smpl-step-step:first-child>.progress {
+        left: 50%;
+        width: 50%;
+    }
+    
+    .smpl-step>.smpl-step-step:last-child>.progress {
+        width: 50%;
+    }
+    
+    .smpl-step>.smpl-step-step.disabled a.smpl-step-icon {
+        pointer-events: none;
+    }
+</style>
+{% endblock %}

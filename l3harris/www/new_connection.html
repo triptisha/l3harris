@@ -1,0 +1,130 @@
+{% extends "templates/web.html" %}
+
+{% block title %} L3Harris {% endblock %}
+
+{% block style %}
+<style>
+    {% include "templates/includes/new_connection/fonts/material-icon/css/material-design-iconic-font.min.css" %}
+    {% include "templates/includes/new_connection/vendor/nouislider/nouislider.min.css" %}
+    {% include "templates/includes/new_connection/css/style.css" %}
+</style>
+{% endblock %}
+
+{% block page_content %}
+<form method="POST" id="signup-form" class="signup-form" action="#">
+    <div>
+        <h3>Personal info</h3>
+        <fieldset>
+            <h2>Personal information</h2>
+            <p class="desc">Please enter your infomation and proceed to next step so we can build your account</p>
+            <div class="fieldset-content">
+                <div class="form-row">
+                    <div class="form-flex">
+                        <div class="form-group">
+                            <label for="first_name" class="form-label">First Name</label>
+                            <input type="text" name="first_name" id="first_name" />
+                        </div>
+                        <div class="form-group">
+                            <label for="last_name" class="form-label">Last Name</label>
+                            <input type="text" name="last_name" id="last_name" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-flex">
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" name="email" id="email" />
+                        </div>
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Phone</label>
+                            <input type="text" name="phone" id="phone" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-flex">
+                        <div class="form-group">
+                            <label for="address" class="form-label">Address</label>
+                            <input type="text" name="address" id="address" />
+                        </div>
+                        <div class="form-group">
+                            <label for="country" class="form-label">Country</label>
+                            <input type="text" name="country" id="country" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-flex">
+                        <div class="form-group">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="text" name="password" id="password" />
+                        </div>
+                        <div class="form-group">
+                            <label for="confirm_password" class="form-label">Confirm Password</label>
+                            <input type="text" name="confirm_password" id="confirm_password" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+
+        <h3>Other information</h3>
+        <fieldset>
+            <h2>Other information</h2>
+            <p class="desc">Please enter your infomation and proceed to next step so we can build your account</p>
+            <div class="fieldset-content">
+                <div class="form-group">
+                    <label for="latency" class="form-label">Latency</label>
+                    <div class="form-find">
+                        1g<input type="range" class="custom-range" name="latency" id="latency" min="0" max="100">800G
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="throuhput" class="form-label">Throuhput</label>
+                    <div class="form-find">
+                        1ms<input type="range" class="custom-range" name="throuhput" id="throuhput" min="0" max="100">100ms
+                    </div>
+                </div>
+                <div class="form-flex">
+                    <div class="form-group">
+                        <label for="from_date" class="form-label">From</label>
+                        <input type="text" name="from_date" id="from_date" />
+                    </div>
+                    <div class="form-group">
+                        <label for="to_date" class="form-label">To</label>
+                        <input type="text" name="to_date" id="to_date" />
+                    </div>
+                </div>
+                <div class="form-flex">
+                    <div class="form-group">
+                        <label for="estimate" class="form-label">Estimated Cost</label>
+                        <input type="text" name="estimate" id="estimate" readonly />
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+
+        <h3>Checkout</h3>
+        <fieldset>
+            <h2>Checkout !!</h2>
+            <div class="fieldset-content">
+                <h3>Checkout Sucessfull !!!</h3>
+            </div>
+        </fieldset>
+    </div>
+</form>
+{% endblock %}
+
+{% block script %}
+    <script>{% include "templates/includes/new_connection/vendor/jquery/jquery.min.js" %}</script>
+    <script>{% include "templates/includes/new_connection/vendor/jquery-validation/dist/jquery.validate.min.js" %}</script>
+    <script>{% include "templates/includes/new_connection/vendor/jquery-validation/dist/additional-methods.min.js" %}</script>
+    <script>{% include "templates/includes/new_connection/vendor/jquery-steps/jquery.steps.min.js" %}</script>
+    <script>{% include "templates/includes/new_connection/vendor/minimalist-picker/dobpicker.js" %}</script>
+    <script>{% include "templates/includes/new_connection/vendor/nouislider/nouislider.min.js" %}</script>
+    <script>{% include "templates/includes/new_connection/vendor/wnumb/wNumb.js" %}</script>
+    <script>{% include "templates/includes/new_connection/js/main.js" %}</script>
+{% endblock %}
+
+{% block sidebar %}{% endblock %}

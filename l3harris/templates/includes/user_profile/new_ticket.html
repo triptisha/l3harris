@@ -1,0 +1,94 @@
+<!-- Button trigger modal -->
+<form>
+    <div class="row">
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-4" style="text-align: right;">
+            <div class="form-group">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                    New ticket
+                </button>
+            </div>
+        </div>
+    </div>
+</form>
+<section class="blog_area_two  service_item">
+<div>
+    <table class="table table-condensed" id="myTable">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Subject</th>
+                <th scope="col">Created On</th>
+                <th scope="col">Subscription</th>
+                <th scope="col">Status</th>
+            </tr>
+        </thead>
+        <tbody class="panel">
+            {% for ticket in tickets %}
+            <tr data-toggle="collapse" data-target="#demo{{loop.index}}" data-parent="#myTable" style="cursor: pointer;">
+                <td>{{loop.index}}</td>
+                <td>{{ticket.subject}}</td>
+                <td>{{ticket.opening_date}}</td>
+                <td>{{ticket.subscription}}</td>
+                <td>{{ticket.status}}</td>
+            </tr>
+            <tr id="demo{{loop.index}}" class="collapse">
+                <td colspan="6" class="hiddenRow">
+                    <p>{{ticket.description}}</p>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+</section>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">New Ticket</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label>Subject</label>
+                            <input type="text" class="form-control" id="subs_tck">
+                        </div>
+                        <div class="col-md-12">
+                            <label>Description</label>
+                            <input class="form-control input-lg" id="desc_tck" type="text">
+                        </div>
+                        <div class="col-md-12">
+                            <label>Subscription</label>
+                            <select id="subscription-selection">
+                                {% for subscription in subscriptions %}
+                                <option value="{{subscription.name}}">{{subscription.name}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="ticket_submit">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% block script %}
+
+<script>
+</script>
+{% endblock %}

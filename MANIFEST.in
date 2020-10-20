@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include l3harris *.css
+recursive-include l3harris *.csv
+recursive-include l3harris *.html
+recursive-include l3harris *.ico
+recursive-include l3harris *.js
+recursive-include l3harris *.json
+recursive-include l3harris *.md
+recursive-include l3harris *.png
+recursive-include l3harris *.py
+recursive-include l3harris *.svg
+recursive-include l3harris *.txt
+recursive-exclude l3harris *.pyc

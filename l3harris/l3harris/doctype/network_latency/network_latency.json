@@ -1,0 +1,51 @@
+{
+ "autoname": "field:network_latency",
+ "creation": "2020-07-16 03:10:10.296449",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "network_latency",
+  "priority"
+ ],
+ "fields": [
+  {
+   "description": "Network Latency in ms (Enter value in intergers.)",
+   "fieldname": "network_latency",
+   "fieldtype": "Data",
+   "label": "Network Latency",
+   "unique": 1
+  },
+  {
+   "fieldname": "priority",
+   "fieldtype": "Select",
+   "label": "Priority",
+   "options": "1\n2\n3\n4\n5\n6\n7\n8\n9\n10"
+  }
+ ],
+ "modified": "2020-07-28 23:11:57.395960",
+ "modified_by": "Administrator",
+ "module": "L3Harris",
+ "name": "Network Latency",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
+}
